@@ -1,4 +1,4 @@
-!--schermata principale del nostro sito - schermata di default -->
+
 <template>
   <div>
     <link
@@ -317,18 +317,12 @@ img {
 </style>
 
 <script>
-import { Carousel, Slide } from "vue-snap";
-import "vue-snap/dist/vue-snap.css";
 
 export default {
   data: function () {
     return {
       username: localStorage.getItem("username").toUpperCase(),
     };
-  },
-  components: {
-    Carousel,
-    Slide,
   },
 };
 </script>

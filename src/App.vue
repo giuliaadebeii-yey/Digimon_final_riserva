@@ -14,7 +14,8 @@
         </div>
       </md-app-toolbar>
 
-      <md-app-drawer :md-active.sync="showNavigation">
+      <v-navigation-drawer v-model="drawer" :location="$vuetify.display.mobile ? 'bottom' : undefined" temporary>
+        <v-list class="menu__laterale" v-if="logged">
         <md-toolbar class="md-transparent" md-elevation="0">
           <span class="md-title" style="font-style: bold; letter-spacing: 1px"
             >DIGIMON</span
@@ -43,7 +44,8 @@
           </md-list-item>
         </md-list>
         <br />
-      </md-app-drawer>
+        </v-list>
+      </v-navigation-drawer>
       <md-app-content>
         <router-view> </router-view>
       </md-app-content>

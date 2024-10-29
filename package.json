@@ -1,55 +1,38 @@
 {
-  "name": "digimon-final-riserva",
-  "version": "0.1.0",
-  "private": true,
+  "name": "digimon_vuetify",
+  "version": "0.0.0",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "@firebase/app": "0.6.28",
-    "@firebase/firestore": "2.3.8",
-    "@vue/cli-plugin-babel": "4.5.13",
-    "axios": "0.21.1",
-    "vue": "2.6.12",
-    "vue-material": "1.0.0-beta-15",
+    "@mdi/font": "7.4.47",
+    "axios": "^1.7.7",
+    "core-js": "^3.37.1",
+    "roboto-fontface": "*",
+    "vue": "^3.4.31",
+    "vue-material": "^0.0.15",
     "vue-material-design-icons": "5.0.0",
-    "vue-router": "3.5.1",
-    "vue-snap": "0.7.1"
+    "vue-snap": "^0.1.0-beta.8",
+    "vuetify": "^3.6.11"
   },
   "devDependencies": {
-    "@vue/cli-plugin-eslint": "4.1.1",
-    "@vue/cli-service": "4.1.1",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.0.1",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ],
-  "keywords": [],
-  "description": ""
+    "@vitejs/plugin-vue": "^5.0.5",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.4.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "sass": "1.77.6",
+    "unplugin-fonts": "^1.1.1",
+    "unplugin-vue-components": "^0.27.2",
+    "unplugin-vue-router": "^0.10.0",
+    "vite": "^5.3.3",
+    "vite-plugin-vuetify": "^2.0.3",
+    "vue-router": "^4.4.0"
+  }
 }

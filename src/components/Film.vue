@@ -12,7 +12,7 @@
         v-for="film in films"
         :key="film.id"
       >
-        <md-card>
+        <v-card>
           <md-card-area>
             <md-card-media>
               <img :src="film.img" />
@@ -43,7 +43,7 @@
               </md-card-content>
             </md-card-expand-content>
           </md-card-expand>
-        </md-card>
+        </v-card>
         <br />
       </div>
     </div>

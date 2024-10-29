@@ -1,16 +1,4 @@
 import axios from "axios";
-import firebase from "@firebase/app";
-import "@firebase/firestore";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAPfj_EbkjmeeBkd2uHHI1xK0vIZK5qB2k",
-  authDomain: "digiworld-d2e13.firebaseapp.com",
-  projectId: "digiworld-d2e13",
-};
-
-firebase.initializeApp(firebaseConfig);
-
-const db = firebase.firestore();
 
 export default {
   getDigimons(limit) {

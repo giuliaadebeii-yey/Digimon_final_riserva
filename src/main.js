@@ -1,58 +1,43 @@
-import Vue from "vue";
-import App from "./App.vue";
-import VueRouter from "vue-router";
+/**
+ * main.js
+ *
+ * Bootstraps Vuetify and other plugins then mounts the App`
+ */
+
+// Pluginsimport Vue from "vue";
+import { registerPlugins } from '@/plugins'
+import { createRouter, createWebHistory } from "vue-router";
 import VueMaterial from "vue-material";
 
-import "vue-material/dist/vue-material.min.css";
-import "vue-material/dist/theme/default-dark.css";
+// Components
+import App from './App.vue';
 
-import Film from "./components/Film";
-import Home from "./components/Home";
-import Videogames from "./components/Videogames";
-import DigimonList from "./components/Digimonlist";
-import DigimonSimili from "./components/DigimonSimili";
-import Dataservice from "./database";
+// Composables
+import { createApp } from 'vue';
 
-Vue.use(VueMaterial);
-Vue.use(VueRouter);
+import Film from "./components/Film.vue";
+import Home from "./components/Home.vue";
+import Videogames from "./components/Videogames.vue";
+import DigimonList from "./components/Digimonlist.vue";
+import DigimonSimili from "./components/DigimonSimili.vue";
 
-Vue.config.productionTip = false;
 
-//collegamenti delle pagine
-const router = new VueRouter({
-  mode: "history",
-  routes: [
-    {
-      name: "Home",
-      path: "/home",
-      component: Home,
-    },
-    { path: "/", redirect: "/home" }, // di default va alla homepage
-
-    {
-      name: "Videogames",
-      path: "/videogames",
-      component: Videogames,
-    },
-    {
-      name: "DigimonList",
-      path: "/digimonList",
-      component: DigimonList,
-    },
-    {
-      name: "Digimon",
-      path: "/digimonlist/:name",
-      component: DigimonSimili,
-    },
-    {
-      name: "Film",
-      path: "/Film",
-      component: Film,
-    },
-  ],
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        {path: "/", component: Home, name: "home"},
+        {path: "/home", component: Home, name: "home"},
+        {path: "/Film", component: Film, name: "Film"},
+        {path: "/DigimonList", component: DigimonList, name: "DigimonList"},
+        {path: "/Videogames", component: Videogames, name: "Videogames"},
+        {path: "/DigimonSimili", component: DigimonSimili, name: "DigimonSimili"},
+      ]
 });
 
-new Vue({
-  router, // corrisponde a router: router;
-  render: (h) => h(App),
-}).$mount("#app");
+const app = createApp(App);
+
+registerPlugins(app);
+
+app.use(VueMaterial);
+app.use(router);
+app.mount('#app');
